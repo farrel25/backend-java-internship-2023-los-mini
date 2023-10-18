@@ -1,0 +1,19 @@
+server:
+  servlet:
+    context-path: /los/api
+  error:
+    include-message: always
+
+spring:
+  application:
+    name: Loan Origination System Regular Mini Version
+  profiles:
+    active: dev
+
+auth:
+  secret-key: WzatJDgR0eBv2Tv48zk2bmuuU7/XEBvIAxZc7fetr74=
+#  secret-key: l0sr3gul4rm1n1!
+  access-token:
+    expiration: 86_400_000 # a day in millisecond
+#    expiration: 60_000 # a minute
+
