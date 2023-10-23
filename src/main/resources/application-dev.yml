@@ -2,14 +2,14 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/los_regular_mini
     username: postgres
-    password: postgres
+    password: dzulhijjah09
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
-      connection-timeout: 20_000
-      max-lifetime: 90_000
+      connection-timeout: 20000
+      max-lifetime: 90000
       maximum-pool-size: 20
       minimum-idle: 10
-      idle-timeout: 30_000
+      idle-timeout: 30000
     driver-class-name: org.postgresql.Driver
 
   jpa:
