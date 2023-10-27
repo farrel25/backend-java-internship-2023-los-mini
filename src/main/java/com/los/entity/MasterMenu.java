@@ -42,29 +42,11 @@ public class MasterMenu extends BaseEntity implements Serializable {
     private String name;
 
     @Column(name = "flow_sequence", nullable = false)
-    private String flowSequence;
+    private Long flowSequence;
 
     @Column(name = "is_active", nullable = false, columnDefinition = "boolean default true")
     private Boolean isActive;
 
     @Column(name = "is_deleted", nullable = false, columnDefinition = "boolean default false")
     private Boolean isDeleted;
-
-    @CreatedBy
-    @Column(name = "created_by", nullable = false)
-    private Long createdBy;
-
-    @CreatedDate
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "create_on", nullable = false, columnDefinition = "timestamp with timezone")
-    private Date createdOn;
-
-    @LastModifiedBy
-    @Column(name = "updated_by", nullable = false)
-    private Long updatedBy;
-
-    @LastModifiedDate
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "updated_on", nullable = false, columnDefinition = "timestamp with time zone")
-    private Date updatedOn;
 }

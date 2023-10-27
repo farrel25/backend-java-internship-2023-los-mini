@@ -56,20 +56,4 @@ public class CollateralApraisal extends BaseEntity implements Serializable {
 
     @Column(name = "is_deleted", nullable = false, columnDefinition = "boolean default false")
     private Boolean isDeleted;
-
-    @CreatedBy
-    @Column(name = "created_by", nullable = false)
-    private Long createdBy;
-
-    @CreatedDate
-    @Column(name = "create_on", nullable = false, columnDefinition = "timestamp with time zone")
-    private Date createdOn;
-
-    @LastModifiedBy
-    @Column(name = "updated_by", nullable = false)
-    private Long updatedBy;
-
-    @LastModifiedDate
-    @Column(name = "updated_on", nullable = false, columnDefinition = "timestamp with time zone")
-    private Date updatedOn;
 }

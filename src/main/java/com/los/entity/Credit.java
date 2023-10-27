@@ -64,22 +64,4 @@ public class Credit extends BaseEntity implements Serializable {
 
     @Column(name = "is_deleted", nullable = false, columnDefinition = "boolean default false")
     private Boolean isDeleted;
-
-    @CreatedBy
-    @Column(name = "created_by", nullable = false)
-    private Long createdBy;
-
-    @CreatedDate
-    @Column(name = "created_on", nullable = false, columnDefinition = "timestamp with timezone")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdOn;
-
-    @LastModifiedBy
-    @Column(name = "updated_by", nullable = false)
-    private Long updatedBy;
-
-    @LastModifiedDate
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "updated_on", nullable = false, columnDefinition = "timestamp with timezone")
-    private Date updatedOn;
 }
