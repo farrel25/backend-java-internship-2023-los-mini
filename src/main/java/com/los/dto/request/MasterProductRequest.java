@@ -9,8 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Data
-public class MasterMenuRequest {
+public class MasterProductRequest {
     private String name;
-    private Long flowSequence;
     private Boolean isActive;
 }

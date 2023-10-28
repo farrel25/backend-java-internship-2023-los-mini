@@ -1,14 +1,16 @@
 package com.los.dto.response;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Data
-public class MasterMenuResponse {
+public class MasterProductResponse {
     private Long id;
     private String name;
-    private Long flowSequence;
     private Boolean isActive;
 }

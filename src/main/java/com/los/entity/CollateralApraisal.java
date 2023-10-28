@@ -32,7 +32,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-@SQLDelete(sql = "UPDATE master_role SET is_deleted = true WHERE id = ?")
+@SQLDelete(sql = "UPDATE collateral_appraisal SET is_deleted = true WHERE id = ?")
 @Where(clause = "is_deleted = false")
 public class CollateralApraisal extends BaseEntity implements Serializable {
     

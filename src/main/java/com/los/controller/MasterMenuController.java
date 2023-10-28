@@ -33,13 +33,12 @@ public class MasterMenuController {
     }
 
     @PutMapping(path = "/{menuId}")
-    public ResponseEntity<CommonResponse> updateMasterMenu(@PathVariable Long id,@RequestBody MasterMenuRequest request){
+    public ResponseEntity<CommonResponse> updateMasterMenu(@PathVariable(name = "menuId") Long id,@RequestBody MasterMenuRequest request){
         return ResponseEntity.status(HttpStatus.CREATED).body(masterMenuService.updateMasterMenu(id, request));
     }
 
     @DeleteMapping(path = "/{menuId}")
-    public ResponseEntity<CommonResponse> deleteMasterMenu(@PathVariable Long id){
-        masterMenuService.deleteMasterMenu(id);
-        return ResponseEntity.ok(new CommonResponse());
+    public void deleteMasterMenu(@PathVariable(name = "menuId") Long id){
+       masterMenuService.deleteMasterMenu(id);
     }
 }

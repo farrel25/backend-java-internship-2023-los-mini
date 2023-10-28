@@ -36,7 +36,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-@SQLDelete(sql = "UPDATE master_role SET is_deleted = true WHERE id = ?")
+@SQLDelete(sql = "UPDATE customer SET is_deleted = true WHERE id = ?")
 @Where(clause = "is_deleted = false")
 public class Customer extends BaseEntity implements Serializable {
 
