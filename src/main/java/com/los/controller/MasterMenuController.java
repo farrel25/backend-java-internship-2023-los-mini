@@ -4,6 +4,7 @@ import com.los.dto.request.MasterMenuRequest;
 import com.los.dto.response.CommonResponse;
 import com.los.dto.response.MasterMenuResponse;
 import com.los.service.MasterMenuService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +19,7 @@ public class MasterMenuController {
     private final MasterMenuService masterMenuService;
 
     @PostMapping
-    public ResponseEntity<CommonResponse> createMasterMenu(@RequestBody MasterMenuRequest request){
+    public ResponseEntity<CommonResponse> createMasterMenu(@Valid @RequestBody MasterMenuRequest request){
         return ResponseEntity.status(HttpStatus.CREATED).body(masterMenuService.createMasterMenu(request));
     }
 
@@ -33,7 +34,7 @@ public class MasterMenuController {
     }
 
     @PutMapping(path = "/{menuId}")
-    public ResponseEntity<CommonResponse> updateMasterMenu(@PathVariable(name = "menuId") Long id,@RequestBody MasterMenuRequest request){
+    public ResponseEntity<CommonResponse> updateMasterMenu(@Valid @PathVariable(name = "menuId") Long id,@RequestBody MasterMenuRequest request){
         return ResponseEntity.status(HttpStatus.CREATED).body(masterMenuService.updateMasterMenu(id, request));
     }
 

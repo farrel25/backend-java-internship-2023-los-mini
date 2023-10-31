@@ -4,6 +4,7 @@ import com.los.dto.request.MasterProductRequest;
 import com.los.dto.response.CommonResponse;
 import com.los.dto.response.MasterProductResponse;
 import com.los.service.MasterProductService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +19,7 @@ public class MasterProductController {
     private final MasterProductService masterProductService;
 
     @PostMapping
-    public ResponseEntity<CommonResponse> createMasterProduct(@RequestBody MasterProductRequest request){
+    public ResponseEntity<CommonResponse> createMasterProduct(@Valid @RequestBody MasterProductRequest request){
         return ResponseEntity.status(HttpStatus.CREATED).body(masterProductService.createMasterProduct(request));
     }
 
@@ -33,7 +34,7 @@ public class MasterProductController {
     }
 
     @PutMapping(path = "/{productId}")
-    public ResponseEntity<CommonResponse> updateMasterProduct(@PathVariable(name = "productId") Long id,@RequestBody MasterProductRequest request){
+    public ResponseEntity<CommonResponse> updateMasterProduct(@Valid @PathVariable(name = "productId") Long id,@RequestBody MasterProductRequest request){
         return ResponseEntity.status(HttpStatus.CREATED).body(masterProductService.updateMasterProduct(id, request));
     }
 

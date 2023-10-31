@@ -46,7 +46,7 @@ public class MasterProductService {
     }
 
     public CommonResponse updateMasterProduct(Long id, MasterProductRequest request){
-        Optional<MasterProduct> optionalMasterProduct = masterProductRepository.findByIdAndIsDeletedFalse(id);
+        Optional<MasterProduct> optionalMasterProduct = masterProductRepository.findById(id);
 
         if (optionalMasterProduct.isEmpty()){
             throw new ResourceNotFoundException("Master product not found with id : " + id);
@@ -60,7 +60,7 @@ public class MasterProductService {
     }
 
     public void deleteMasterProduct(Long id){
-        Optional<MasterProduct> optionalMasterProduct = masterProductRepository.findByIdAndIsDeletedFalse(id);
+        Optional<MasterProduct> optionalMasterProduct = masterProductRepository.findById(id);
 
         if (optionalMasterProduct.isEmpty()){
             throw new ResourceNotFoundException("Master product not found with id : " + id);
