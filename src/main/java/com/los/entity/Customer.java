@@ -36,7 +36,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-@SQLDelete(sql = "UPDATE master_role SET is_deleted = true WHERE id = ?")
+@SQLDelete(sql = "UPDATE customer SET is_deleted = true WHERE id = ?")
 @Where(clause = "is_deleted = false")
 public class Customer extends BaseEntity implements Serializable {
 
@@ -69,27 +69,9 @@ public class Customer extends BaseEntity implements Serializable {
     private FlowStatus flowStatus;
 
     @ManyToOne
-    @JoinColumn(name = "locked_by", nullable = false)
+    @JoinColumn(name = "locked_by")
     private MasterUser lockedBy;
 
     @Column(name = "is_deleted", nullable = false, columnDefinition = "boolean default false")
     private Boolean isDeleted;
-
-    @CreatedBy
-    @Column(name = "created_by", nullable = false)
-    private Long createdBy;
-
-    @CreatedDate
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "create_on", nullable = false, columnDefinition = "timestamp with timezone")
-    private Date createdOn;
-
-    @LastModifiedBy
-    @Column(name = "updated_by", nullable = false)
-    private Long updatedBy;
-
-    @LastModifiedDate
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "updated_on", nullable = false, columnDefinition = "timestamp with time zone")
-    private Date updatedOn;
 }
