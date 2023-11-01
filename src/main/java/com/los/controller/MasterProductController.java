@@ -34,7 +34,7 @@ public class MasterProductController {
     }
 
     @PutMapping(path = "/{productId}")
-    public ResponseEntity<CommonResponse> updateMasterProduct(@Valid @PathVariable(name = "productId") Long id,@RequestBody MasterProductRequest request){
+    public ResponseEntity<CommonResponse> updateMasterProduct(@PathVariable(name = "productId") Long id,@Valid @RequestBody MasterProductRequest request){
         return ResponseEntity.status(HttpStatus.CREATED).body(masterProductService.updateMasterProduct(id, request));
     }
 

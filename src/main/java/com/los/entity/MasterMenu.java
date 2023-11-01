@@ -19,7 +19,7 @@ import lombok.Setter;
 
 
 @Entity
-@Table(schema = "public", name = "master_menu")
+@Table(schema = "public", name = "master_menu", uniqueConstraints = {@UniqueConstraint(columnNames = "flow_sequence")})
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -34,6 +34,7 @@ public class MasterMenu extends BaseEntity implements Serializable {
 
     @Column(name = "name", nullable = false)
     private String name;
+
 
     @Column(name = "flow_sequence", nullable = false, unique = true)
     private Long flowSequence;

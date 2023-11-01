@@ -1,6 +1,6 @@
 package com.los.dto.request;
 
-import com.los.validation.UniqueFlowSequence;
+
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,7 +17,6 @@ public class MasterMenuRequest {
     private String name;
 
     @NotNull
-    @UniqueFlowSequence
     private Long flowSequence;
 
     @NotNull

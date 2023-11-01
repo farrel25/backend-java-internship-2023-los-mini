@@ -34,7 +34,7 @@ public class MasterMenuController {
     }
 
     @PutMapping(path = "/{menuId}")
-    public ResponseEntity<CommonResponse> updateMasterMenu(@Valid @PathVariable(name = "menuId") Long id,@RequestBody MasterMenuRequest request){
+    public ResponseEntity<CommonResponse> updateMasterMenu(@PathVariable(name = "menuId") Long id,@Valid @RequestBody MasterMenuRequest request){
         return ResponseEntity.status(HttpStatus.CREATED).body(masterMenuService.updateMasterMenu(id, request));
     }
 

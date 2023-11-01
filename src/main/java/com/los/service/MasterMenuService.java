@@ -9,7 +9,6 @@ import com.los.exception.FlowSequenceNotUniqueException;
 import com.los.exception.ResourceNotFoundException;
 import com.los.mapper.MasterMenuMapper;
 import com.los.repository.MasterMenuRepository;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
@@ -26,8 +25,11 @@ public class MasterMenuService {
 
     private final MasterMenuMapper masterMenuMapper;
 
-    public CommonResponse createMasterMenu(@Valid MasterMenuRequest request) {
+    public CommonResponse createMasterMenu(MasterMenuRequest request) {
         MasterMenu masterMenu = masterMenuMapper.toMasterMenu(request);
+        if (masterMenuRepository.existsByFlowSequence(masterMenu.getFlowSequence())) {
+            throw new FlowSequenceNotUniqueException("Flow sequence must be unique");
+        }
         masterMenu.setIsDeleted(Boolean.valueOf("false"));
 
         MasterMenu savedMasterMenu = masterMenuRepository.save(masterMenu);
