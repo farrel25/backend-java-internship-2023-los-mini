@@ -49,7 +49,7 @@ public class Customer extends BaseEntity implements Serializable {
 
     @Column(name = "customer_type_id", nullable = false)
     @Enumerated(EnumType.ORDINAL)
-    private CustomerType customerTypeId;
+    private CustomerType customerType;
 
     @Column(name = "identity_number", nullable = false)
     private String identityNumber;
@@ -62,7 +62,7 @@ public class Customer extends BaseEntity implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "master_menu_id", nullable = false, referencedColumnName = "id")
-    private MasterMenu masterMenu;
+    private MasterMenu masterMenuId;
 
     @Column(name = "flow_status", nullable = false)
     @Enumerated(EnumType.ORDINAL)

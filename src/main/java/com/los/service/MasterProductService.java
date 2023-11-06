@@ -55,7 +55,7 @@ public class MasterProductService {
         MasterProduct masterProduct = optionalMasterProduct.get();
         masterProductMapper.updateMasterProduct(request, masterProduct);
 
-        MasterProduct updatedMasterProduct = masterProductRepository.save(optionalMasterProduct.get());
+        MasterProduct updatedMasterProduct = masterProductRepository.save(masterProduct);
         return new CommonResponse(updatedMasterProduct.getId());
     }
 
