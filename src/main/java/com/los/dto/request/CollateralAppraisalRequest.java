@@ -1,23 +1,28 @@
 package com.los.dto.request;
 
-
+import com.los.entity.Collateral;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Data
-public class MasterMenuRequest {
+public class CollateralAppraisalRequest {
     @NotNull
-    private String name;
+    private Collateral collateral;
 
     @NotNull
-    private Long flowSequence;
+    private String appraiserName;
 
     @NotNull
-    private Boolean isActive;
+    private Double appraisalValue;
+
+    @NotNull
+    private LocalDateTime appraisalDate;
 }

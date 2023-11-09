@@ -2,7 +2,6 @@ package com.los.dto.request;
 
 import com.los.constant.CustomerType;
 import com.los.constant.FlowStatus;
-import com.los.entity.MasterMenu;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,6 +13,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 public class CustomerRequest {
+
     @NotNull
     private String fullName;
 
@@ -36,5 +36,5 @@ public class CustomerRequest {
     private FlowStatus flowStatus;
 
     @NotNull
-    private Long lockedById;
+    private Long lockedBy;
 }

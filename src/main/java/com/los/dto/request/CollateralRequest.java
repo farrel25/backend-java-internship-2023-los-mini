@@ -1,6 +1,6 @@
 package com.los.dto.request;
 
-
+import com.los.entity.Customer;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,13 +11,19 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Data
-public class MasterMenuRequest {
+public class CollateralRequest {
     @NotNull
-    private String name;
+    private Customer customer;
 
     @NotNull
-    private Long flowSequence;
+    private String collateralName;
 
     @NotNull
-    private Boolean isActive;
+    private String ownerName;
+
+    @NotNull
+    private String ownerAddress;
+
+    @NotNull
+    private String legalityNumber;
 }
